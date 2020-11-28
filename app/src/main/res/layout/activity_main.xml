@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="br.com.pedrohenriquemoura.gettinstartwithmockito.MainActivityViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <EditText
+                android:text="@={viewModel.distancia}"
+                android:id="@+id/editDistance"
+                style="@style/mCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="@string/label_distance" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="@string/title_total_km"
+                android:textAllCaps="true"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="10sp" />
+
+            <EditText
+                android:text="@={viewModel.preco}"
+                android:id="@+id/editPrice"
+                style="@style/mCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="@string/label_price" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="@string/title_price_litro"
+                android:textAllCaps="true"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="10sp" />
+
+            <EditText
+                android:text="@={viewModel.autonomia}"
+                android:id="@+id/editAutonomy"
+                style="@style/mCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="@string/label_autonomia" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="@string/kms_por_litro"
+                android:textAllCaps="true"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:gravity="center"
+                android:text="@string/title_total_price"
+                android:textAllCaps="true"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/textResult"
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="#fd6a6a"
+                android:textSize="35sp"
+                android:text="@={viewModel.resultado}" />
+
+            <Button
+                android:id="@+id/buttonCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:padding="20dp"
+                android:text="@string/btn_calculate"
+                android:onClick="@{() -> viewModel.handleCalculateButtonClick()}"
+                android:background="@color/colorAccent"
+                android:textAllCaps="true"
+                android:textColor="@color/colorLightGray"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
